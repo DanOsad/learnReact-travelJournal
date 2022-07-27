@@ -5,10 +5,19 @@ import data from './data'
 
 export default function App() {
   const locations = data.map(location=>{
-    // do something with data
+    return (
+      <Location 
+        key={location.id}
+        {...location}
+      />
+    )
   })
-  render (
-    <Header />
-    {locations}
+  return (
+    <div className='container'>
+      <Header />
+      <div className='locations-container'>
+        {locations}
+      </div>
+    </div>
   )
 }
